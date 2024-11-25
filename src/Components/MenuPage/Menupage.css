@@ -1,0 +1,106 @@
+/* MenuPage.css */
+.menu-page {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+.menu-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.menu-header h1 {
+  font-size: 36px;
+  color: #333;
+}
+
+.menu-header p {
+  font-size: 18px;
+  color: #777;
+}
+
+.menu-category {
+  margin-bottom: 40px;
+}
+
+.menu-category h2 {
+  font-size: 28px;
+  color: #444;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.menu-cards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.menu-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 15px;
+  text-align: center;
+  width: 250px;
+  padding: 15px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.menu-card:hover {
+  transform: scale(1.05);
+}
+
+.menu-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.menu-card h3 {
+  font-size: 22px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.menu-card p {
+  font-size: 16px;
+  color: #555;
+}
+
+.add-to-cart-btn {
+  background-color: #ff9800;
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  margin-top: 15px;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #e68900;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 14px;
+  color: #777;
+}
+
+.footer a {
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}

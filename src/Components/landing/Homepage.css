@@ -1,0 +1,133 @@
+/* General styles */
+body {
+  margin: 0;
+  font-family: "Poppins", Arial, sans-serif; /* Updated font */
+}
+
+.homepage {
+  text-align: center;
+}
+
+/* Hero Section */
+.hero {
+  background-image: url("../../images/bg.png"); /* Add your background image */
+  background-size: cover; /* Ensure the image covers the section */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent tiling */
+  color: white; /* White text for contrast */
+  height: 90vh; /* 90% viewport height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-content {
+  max-width: 600px;
+  margin: 0 auto;
+  color: #2c2f24;
+  padding: 2rem;
+  border-radius: 10px;
+  font-family: "Poppins", Arial, sans-serif; /* Updated font */
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin: 1rem 0 2rem;
+}
+
+.hero-button {
+  text-decoration: none;
+  background-color: #ffda79;
+  color: #8b0000;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.hero-button:hover {
+  background-color: #8b0000;
+  color: #fff;
+}
+
+/* Features Section */
+.features {
+  padding: 3rem 1rem;
+  background-color: #f8f8f8;
+  font-family: "Poppins", Arial, sans-serif; /* Updated font */
+}
+
+.features h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.features-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.feature {
+  max-width: 300px;
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.feature h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #8b0000;
+}
+
+.feature p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Footer */
+.footer {
+  background-color: #8b0000;
+  color: white;
+  padding: 1rem;
+  margin-top: 2rem;
+  font-family: "Poppins", Arial, sans-serif; /* Updated font */
+}
+
+.footer p {
+  margin: 0.5rem 0;
+}
+
+.footer a {
+  color: #ffda79;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .features-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .feature {
+    width: 90%;
+  }
+}
