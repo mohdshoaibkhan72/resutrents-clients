@@ -15,10 +15,9 @@ const LoginPopup = ({ setShowLogin }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const navigate = useNavigate();
 
-  const API_URL = process.env.REACT_APP_BACKEND_URL;
-  const GOOGLE_CLIENT_ID = process.env.REACT_APP_GOOGLE_CLIENT_ID;
+  const API_URL = "https://resturent-api.onrender.com";
 
-  // Initialize Google API
+  // Initialize Google API (New GIS API)
   useEffect(() => {
     const initializeGoogleAPI = () => {
       if (!window.google || !window.google.accounts) {
@@ -27,7 +26,8 @@ const LoginPopup = ({ setShowLogin }) => {
       }
 
       window.google.accounts.id.initialize({
-        client_id: GOOGLE_CLIENT_ID,
+        client_id:
+          "649980254584-mul64dr5a2keki6kjg10nurevv0riq8p.apps.googleusercontent.com",
         callback: handleGoogleSignIn,
       });
 
@@ -41,7 +41,7 @@ const LoginPopup = ({ setShowLogin }) => {
     };
 
     initializeGoogleAPI();
-  }, [GOOGLE_CLIENT_ID]);
+  }, []);
 
   // Handle Google Sign-In
   const handleGoogleSignIn = async (response) => {
@@ -60,10 +60,7 @@ const LoginPopup = ({ setShowLogin }) => {
       navigate("/menu");
     } catch (error) {
       console.error("Google Sign-In Error:", error);
-      const message =
-        error.response?.data?.message ||
-        "Google Sign-In failed. Please try again.";
-      setError(message);
+      setError("Google Sign-In failed. Please try again.");
     }
   };
 
@@ -121,9 +118,11 @@ const LoginPopup = ({ setShowLogin }) => {
       }
     } catch (error) {
       console.error("Error during submission:", error);
-      const message =
-        error.response?.data?.message || "Unable to connect to the server.";
-      setError(message);
+      if (error.response) {
+        setError(error.response.data.message || "Login failed.");
+      } else {
+        setError("Unable to connect to the server.");
+      }
     }
   };
 
