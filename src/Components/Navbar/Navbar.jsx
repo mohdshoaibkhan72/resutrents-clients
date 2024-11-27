@@ -1,33 +1,32 @@
 import React, { useState, useEffect } from "react";
-import "./Navbar.css"; // External CSS
+import "./Navbar.css";
 import logo from "../../images/logo.png";
 import LoginPopup from "../LoginPopup/LoginPopup";
-import { useNavigate } from "react-router-dom"; // Use useNavigate hook
+import { useNavigate } from "react-router-dom";
 
 function Navbar() {
   const [showLogin, setShowLogin] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const navigate = useNavigate(); // Initialize navigate function
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // State for toggling menu
+  const navigate = useNavigate();
 
   useEffect(() => {
     const token = localStorage.getItem("authToken");
-    setIsLoggedIn(!!token); // Check for authToken and update login state
+    setIsLoggedIn(!!token);
   }, []);
 
-  // Handle Logout
   const handleLogout = () => {
     localStorage.removeItem("authToken");
     setIsLoggedIn(false);
   };
 
-  // Handle Menu Click
   const handleMenuClick = () => {
     const token = localStorage.getItem("authToken");
     if (token) {
-      navigate("/menu"); // Navigate to the menu page
+      navigate("/menu");
     } else {
       alert("Please log in first to access the menu.");
-      setShowLogin(true); // Open the login popup
+      setShowLogin(true);
     }
   };
 
@@ -40,13 +39,19 @@ function Navbar() {
           <h1 className="navbar-name">Bistro Bliss</h1>
         </div>
 
+        {/* Hamburger Menu */}
+        <div className="hamburger" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
         {/* Links */}
-        <ul className="navbar-links">
+        <ul className={`navbar-links ${isMenuOpen ? "show" : ""}`}>
           <li>
             <a href="/">Home</a>
           </li>
           <li>
-            {/* Menu button that triggers handleMenuClick */}
             <a onClick={handleMenuClick} className="menu-button">
               Menu
             </a>
@@ -67,7 +72,7 @@ function Navbar() {
             </button>
           ) : (
             <button
-              onClick={() => setShowLogin(true)} // Open the login popup
+              onClick={() => setShowLogin(true)}
               className="reserve-button"
             >
               Login
