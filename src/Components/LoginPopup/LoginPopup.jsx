@@ -15,7 +15,7 @@ const LoginPopup = ({ setShowLogin }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const navigate = useNavigate();
 
-  const API_URL = "https://resturent-test.onrender.com";
+  const API_URL = "https://resturent-api.onrender.com";
 
   // Initialize Google API (New GIS API)
   useEffect(() => {
